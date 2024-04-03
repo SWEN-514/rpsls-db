@@ -14,9 +14,8 @@ CREATE TABLE Sessions (
 CREATE TABLE Games (
     GameID SERIAL PRIMARY KEY,
     SessionID INT REFERENCES Sessions(SessionID),
-    StartTime TIMESTAMP,
-    EndTime TIMESTAMP,
-    WinnerID INT REFERENCES Players(PlayerID)
+    WinnerID INT REFERENCES Players(PlayerID),
+    RoundsToWin INT DEFAULT 2
 );
 
 CREATE TABLE PlayerGames (
